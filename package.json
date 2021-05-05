@@ -1,0 +1,40 @@
+{
+  "name": "@webdeveric/prettier-config",
+  "version": "0.0.0",
+  "description": "My Prettier config",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "prettier-config"
+  ],
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "prettier.config.js",
+  "author": {
+    "email": "eric@webdeveric.com",
+    "name": "Eric King",
+    "url": "http://webdeveric.com/"
+  },
+  "scripts": {
+    "lint": "eslint ./*.js --fix",
+    "prettier": "prettier --write ./*.js ./package.json",
+    "prepublishOnly": "npm run lint && npm run prettier"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webdeveric/prettier-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webdeveric/prettier-config/issues"
+  },
+  "homepage": "https://github.com/webdeveric/prettier-config#readme",
+  "peerDependencies": {
+    "prettier": ">=2.0.0"
+  },
+  "devDependencies": {
+    "@webdeveric/eslint-config": "^0.1.2",
+    "eslint": "^7.25.0",
+    "prettier": "^2.2.1"
+  }
+}
