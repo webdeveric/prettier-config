@@ -30,11 +30,11 @@
   },
   "homepage": "https://github.com/webdeveric/prettier-config#readme",
   "peerDependencies": {
-    "prettier": ">=2.0.0"
+    "prettier": ">=2.4.0"
   },
   "devDependencies": {
-    "@webdeveric/eslint-config": "^0.1.2",
-    "eslint": "^7.25.0",
-    "prettier": "^2.2.1"
+    "@webdeveric/eslint-config": "^0.2.2",
+    "eslint": "^8.1.0",
+    "prettier": "^2.4.1"
   }
 }
