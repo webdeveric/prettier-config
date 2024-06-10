@@ -29,12 +29,13 @@
     "url": "https://github.com/webdeveric/prettier-config/issues"
   },
   "homepage": "https://github.com/webdeveric/prettier-config#readme",
+  "packageManager": "pnpm@9.3.0+sha256.e1f9e8d1a16607a46dd3c158b5f7a7dc7945501d1c6222d454d63d033d1d918f",
   "peerDependencies": {
     "prettier": ">=2.4.0"
   },
   "devDependencies": {
-    "@webdeveric/eslint-config": "^0.2.2",
-    "eslint": "^8.1.0",
-    "prettier": "^2.4.1"
+    "@webdeveric/eslint-config": "^0.2.4",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.1"
   }
 }
