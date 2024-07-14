@@ -1,6 +1,6 @@
 {
   "name": "@webdeveric/prettier-config",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "My Prettier config",
   "publishConfig": {
     "access": "public"
