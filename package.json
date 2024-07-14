@@ -18,8 +18,9 @@
   },
   "scripts": {
     "lint": "eslint ./*.js --fix",
-    "prettier": "prettier --write ./*.js ./package.json",
-    "prepublishOnly": "npm run lint && npm run prettier"
+    "format": "prettier . --write",
+    "prepublishOnly": "pnpm lint",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -29,13 +30,25 @@
     "url": "https://github.com/webdeveric/prettier-config/issues"
   },
   "homepage": "https://github.com/webdeveric/prettier-config#readme",
-  "packageManager": "pnpm@9.3.0+sha256.e1f9e8d1a16607a46dd3c158b5f7a7dc7945501d1c6222d454d63d033d1d918f",
+  "packageManager": "pnpm@9.5.0+sha256.dbdf5961c32909fb030595a9daa1dae720162e658609a8f92f2fa99835510ca5",
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix"
+    ],
+    "*": [
+      "cspell --no-progress --no-summary --no-must-find-files",
+      "prettier --write --ignore-unknown"
+    ]
+  },
   "peerDependencies": {
     "prettier": ">=2.4.0"
   },
   "devDependencies": {
-    "@webdeveric/eslint-config": "^0.2.4",
+    "@webdeveric/eslint-config": "^0.5.0",
+    "cspell": "^8.10.4",
     "eslint": "^8.57.0",
-    "prettier": "^3.3.1"
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.3"
   }
 }
