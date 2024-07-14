@@ -13,7 +13,7 @@ module.exports = {
   trailingComma: 'all',
   bracketSameLine: false,
   bracketSpacing: true,
-  arrowParens: 'avoid',
+  arrowParens: 'always',
   requirePragma: false,
   insertPragma: false,
   proseWrap: 'never',
