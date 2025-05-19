@@ -5,16 +5,16 @@
  * @type {import("prettier").Config}
  */
 module.exports = {
-  printWidth: 120,
-  tabWidth: 2,
-  useTabs: false,
-  semi: true,
-  singleQuote: true,
-  trailingComma: 'all',
+  arrowParens: 'always',
   bracketSameLine: false,
   bracketSpacing: true,
-  arrowParens: 'always',
-  requirePragma: false,
   insertPragma: false,
+  printWidth: 120,
   proseWrap: 'never',
+  requirePragma: false,
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'all',
+  useTabs: false,
 };
