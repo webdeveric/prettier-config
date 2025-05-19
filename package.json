@@ -11,6 +11,9 @@
   "license": "MIT",
   "type": "commonjs",
   "main": "prettier.config.js",
+  "files": [
+    "prettier.config.js"
+  ],
   "author": {
     "email": "eric@webdeveric.com",
     "name": "Eric King",
