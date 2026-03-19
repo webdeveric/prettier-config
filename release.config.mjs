@@ -36,12 +36,12 @@ export default {
       },
     ],
     '@semantic-release/release-notes-generator',
+    '@semantic-release/npm',
     [
-      '@semantic-release/npm',
+      '@semantic-release/github',
       {
-        provenance: true,
+        addReleases: 'bottom',
       },
     ],
-    '@semantic-release/github',
   ],
 };
