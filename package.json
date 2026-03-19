@@ -1,29 +1,14 @@
 {
   "name": "@webdeveric/prettier-config",
-  "version": "0.2.1",
+  "version": "0.0.0",
   "description": "My Prettier config",
-  "publishConfig": {
-    "access": "public"
-  },
   "keywords": [
     "prettier-config"
   ],
-  "license": "MIT",
-  "type": "commonjs",
-  "main": "prettier.config.js",
-  "files": [
-    "prettier.config.js"
-  ],
-  "author": {
-    "email": "eric@webdeveric.com",
-    "name": "Eric King",
-    "url": "http://webdeveric.com/"
-  },
-  "scripts": {
-    "lint": "eslint ./*.js --fix",
-    "format": "prettier . --write",
-    "prepublishOnly": "pnpm lint",
-    "prepare": "husky"
+  "author": "Eric King <eric@webdeveric.com> (https://webdeveric.com/)",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -32,26 +17,63 @@
   "bugs": {
     "url": "https://github.com/webdeveric/prettier-config/issues"
   },
-  "homepage": "https://github.com/webdeveric/prettier-config#readme",
-  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977",
-  "lint-staged": {
-    "*.js": [
-      "eslint --cache --fix"
-    ],
-    "*": [
-      "cspell --no-progress --no-summary --no-must-find-files",
-      "prettier --write --ignore-unknown"
-    ]
+  "license": "MIT",
+  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20.0.0"
   },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf ./dist/",
+    "prebuild": "pnpm clean",
+    "build": "tsc --build tsconfig.lib.json --force",
+    "validate": "validate-package-exports --check --info",
+    "postbuild": "pnpm validate",
+    "typecheck": "tsc --build --verbose",
+    "lint": "eslint ./*.{js,cjs,mjs,ts,cts,mts} ./src/ --ext .ts,.mjs,.cjs",
+    "spellcheck": "cspell './{.github,src,test}/**/*.{ts,json}' './*.{js,json,md,mjs,mts}' './package.json' --no-progress",
+    "prepublishOnly": "pnpm typecheck && pnpm spellcheck && pnpm lint && pnpm build",
+    "format": "prettier --write ./*.{js,json,md,mjs,mts} ./src/",
+    "prepare": "husky"
+  },
+  "prettier": "./src/index.ts",
   "peerDependencies": {
     "prettier": ">=2.4.0"
   },
   "devDependencies": {
-    "@webdeveric/eslint-config": "^0.7.0",
-    "cspell": "^9.0.1",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@commitlint/types": "^20.5.0",
+    "@types/node": "^22.19.15",
+    "@webdeveric/eslint-config-ts": "^0.12.0",
+    "commitlint": "^20.5.0",
+    "commitlint-plugin-cspell": "^0.6.0",
+    "conventional-changelog-conventionalcommits": "^9.3.0",
+    "cspell": "^9.7.0",
     "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
-    "lint-staged": "^16.0.0",
-    "prettier": "^3.5.3"
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
+    "rimraf": "^6.1.3",
+    "semantic-release": "^25.0.3",
+    "typescript": "^5.9.3",
+    "validate-package-exports": "^0.22.0"
   }
 }
