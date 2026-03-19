@@ -3,7 +3,7 @@ import type { Config } from 'prettier';
 /**
  * @see https://prettier.io/docs/en/configuration.html
  */
-const config = {
+export default {
   arrowParens: 'always',
   bracketSameLine: false,
   bracketSpacing: true,
@@ -17,5 +17,3 @@ const config = {
   trailingComma: 'all',
   useTabs: false,
 } satisfies Config;
-
-export default config;
