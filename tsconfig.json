@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./cache/.tsbuildinfo"
+  },
+  "references": [{ "path": "./tsconfig.lib.json" }, { "path": "./tsconfig.configs.json" }]
+}
